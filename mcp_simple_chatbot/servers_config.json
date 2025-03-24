@@ -14,6 +14,12 @@
         "weather.py"
       ]
     },
+    "pubchem": {
+      "command": "python",
+      "args": [
+        "pubchem_method.py"
+      ]
+    },
     "github": {
       "command": "npx",
       "args": [
@@ -29,6 +35,13 @@
       "args": [
         "-y",
         "@executeautomation/playwright-mcp-server"
+      ]
+    },
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch",
+        "--ignore-robots-txt"
       ]
     }
   }
