@@ -32,17 +32,38 @@ This example demonstrates how to integrate the Model Context Protocol (MCP) into
    Here's an example:
 
    ```json
-   {
-     "mcpServers": {
-       "sqlite": {
-         "command": "uvx",
-         "args": ["mcp-server-sqlite", "--db-path", "./test.db"]
-       },
-       "puppeteer": {
-         "command": "npx",
-         "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
-       }
-     }
+   "mcpServers": {
+    "sqlite": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-sqlite",
+        "--db-path",
+        "./test.db"
+      ]
+    },
+    "weather": {
+      "command": "python",
+      "args": [
+        "weather.py"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@executeautomation/playwright-mcp-server"
+      ]
+    }
    }
    ```
 
