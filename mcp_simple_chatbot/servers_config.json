@@ -11,13 +11,13 @@
     "weather": {
       "command": "python",
       "args": [
-        "weather.py"
+        "utils/weather.py"
       ]
     },
-    "pubchem": {
+    "PubMed": {
       "command": "python",
       "args": [
-        "pubchem_method.py"
+        "utils/server.py"
       ]
     },
     "github": {
