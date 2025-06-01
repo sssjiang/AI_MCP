@@ -420,9 +420,10 @@ async def main() -> None:
     """Initialize and run the chat session."""
     config = Configuration()
     server_config = config.load_config("servers_config.json")
-    # 替换环境变量占位符 "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
-    server_config["mcpServers"]["github"]["env"]["GITHUB_PERSONAL_ACCESS_TOKEN"] = os.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
-
+    # 替换环境变量占位符 
+    server_config["mcpServers"]["probot"]["env"]["PROBOT_API_KEY"] = os.getenv("PROBOT_API_KEY")
+    # 打印 server_config["mcpServers"]["probot"]["env"]["PROBOT_ACCESS_TOKEN"]的值
+    print(server_config["mcpServers"]["probot"]["env"]["PROBOT_API_KEY"])
     servers = [
         Server(name, srv_config)
         for name, srv_config in server_config["mcpServers"].items()
